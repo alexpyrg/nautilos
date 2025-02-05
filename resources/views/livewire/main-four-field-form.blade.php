@@ -17,7 +17,7 @@
             {{-- Trip Date --}}
             <div class="form-group">
                 <label for="trip_date">{{ __('Select Trip Date') }}</label>
-                <input type="text" id="trip_date" class="tripdate" wire:model="trip_date" placeholder="{{ __('Trip Date') }}" @error('trip_date') class="error-border" @enderror>
+                <input type="text" id="trip_date" class="tripdate" wire:model="trip_date" name="trip_date" placeholder="{{ __('Trip Date') }}" @error('trip_date') class="error-border" @enderror>
                 @error('trip_date') <span class="error">{{ $message }}</span> @enderror
             </div>
 

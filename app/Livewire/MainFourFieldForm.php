@@ -16,7 +16,7 @@ use Livewire\Component;
 class MainFourFieldForm extends Component
 {
     // Form properties
-    #[Validate('required|date')]
+    #[Validate('required')]
     public $trip_date;
 
     #[Validate('required|not_in:0')]
@@ -36,6 +36,7 @@ class MainFourFieldForm extends Component
     {
         return view('livewire.main-four-field-form')->with([
             'trip_types' => $this->trip_types,
+
         ]);
     }
 
@@ -45,7 +46,7 @@ class MainFourFieldForm extends Component
     public function next_step()
     {
         // Validate form inputs
-        $this->validate();
+        dd($this->validate());
 
         // Save data to session
         session()->put('reservationData', [

@@ -1,0 +1,35 @@
+{
+    "s1": {
+        "single_room": {"rate": "100","start_date": "1/1","end_date": "31/5"},
+        "double_room": {"rate": "100","start_date": "1/1","end_date": "31/5"},
+        "triple_room": {"rate": "100","start_date": "1/1","end_date": "31/5"},
+        "akrolithos_room": {"rate": "100","start_date": "1/1","end_date": "31/5"},
+        "start_date": "1/1",
+        "end_date": "31/5"
+    },
+    "s2": {
+        "rate": "100",
+        "start_date": "1/6",
+        "end_date": "31/7"
+    },
+    "s3": {
+        "rate": "100",
+        "start_date": "1/8",
+        "end_date": "31/8"
+    },
+    "s4": {
+        "rate": "100",
+        "start_date": "1/1",
+        "end_date": "31/5"
+    },
+    "s5": {
+        "rate": "100",
+        "start_date": "1/1",
+        "end_date": "31/5"
+    },
+    "s6": {
+    "rate": "100",
+    "start_date": "1/1",
+    "end_date": "31/5"
+}
+}

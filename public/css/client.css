@@ -1,0 +1,1117 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
+
+html{
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding:0;
+    overflow-x: hidden;
+    overflow-y: auto;
+
+
+    font-family: "Roboto Slab", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+
+}
+
+body{
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding:0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    box-sizing: border-box;
+}
+
+
+.top-bar{
+    display: block;
+    position: relative;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    box-sizing: border-box;
+    padding-block: .8rem;
+    background-color: rgb(31, 31, 31);
+    color: whitesmoke;
+    padding-inline: 1rem ;
+    font-size: 18px;
+    flex-wrap: wrap;
+    min-width: 1000px;
+}
+.top-bar-wrapper {
+    display: flex;
+    box-sizing: border-box;
+    min-width: 1000px;
+    width:80%;
+    margin: 0 auto;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.top-bar-wrapper > .group > *{
+    margin-inline: .5rem;
+}
+
+.top-bar-wrapper > select {
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+    font-size: 17px;
+}
+a.email{
+    text-decoration: none;
+    color:rgb(255, 252, 240);
+}
+
+nav {
+ display: block;
+ position: relative;
+ margin:0;
+ font-size: 21px;
+ color: rgb(31, 31, 31);
+ background-color: whitesmoke;
+ line-height: 5rem;
+ border-bottom: 1px solid #131313;
+}
+
+nav > .nav-wrapper{
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    margin: 0 auto;
+    flex-shrink: 1;
+    flex-wrap: wrap;
+    padding-block: .8rem;
+    padding-inline: 1.2rem;
+    width:80%;
+    min-width: 1000px;
+    justify-content: space-between;
+
+}
+nav ul{
+    display: flex;
+    position: relative;
+    margin:0;
+    padding:0;
+    min-height: fit-content;
+}
+nav ul * {
+    box-sizing: border-box;
+}
+nav > ul ul {
+    /*display: block;*/
+    /*position: absolute;*/
+}
+nav a {
+    display: inline;
+    position: relative;
+    color: rgb(31, 31, 31);
+    text-decoration: none;
+    padding-inline: .5rem;
+    border-bottom: 1px solid transparent;
+    transition: .3s;
+    text-align: center;
+    /*padding-inline: .5rem;*/
+    padding: .4rem;
+    box-sizing: border-box;
+    /* border:1px solid yellow; */
+}
+nav .nav-group{
+    display: flex;
+    position: relative;
+    box-sizing: border-box;
+    line-height: 100%;
+    margin-top: 1.5rem;
+    padding-block: .0rem;
+    padding-bottom: 0;
+}
+
+nav .nav-group li{
+    display: inline;
+    position: relative;
+    padding-block: 0;
+    padding: 0;
+    box-sizing: border-box;
+    line-height: 100%;
+    /*padding:0;*/
+
+}
+nav .nav-group > li > a{
+   margin:0;
+    box-sizing: border-box;
+        position: relative;
+    display: inline-block;
+}
+
+ul.sub {
+    display: none;
+    justify-content: center;
+    flex-direction: column;
+    position: absolute;
+    z-index: 10;
+    background-color: whitesmoke;
+    min-width: 150px;
+    width: auto;
+    text-wrap: none;
+    box-sizing: border-box;
+
+    /*margin-top: -10%;*/
+
+}
+ul.sub > li{
+    display: block;
+    position: relative;
+    width: 100%;
+    padding: 0;
+    box-sizing: border-box;
+}
+ul.sub > li > a{
+    display: block;
+    min-width: 100%;
+    padding: .5rem;
+    line-height: 100%;
+}
+
+ul.sub > li:not(:last-child){ /** :not(:last-child) */
+    border-bottom: 1px solid #131313;
+}
+li:hover{
+
+}
+li:hover ul.sub{
+    display: block;
+}
+nav img {
+    max-width: 350px;
+    max-height: 100px ;
+    /* border: 1px solid red; */
+}
+div.menu-dropdown{
+position: absolute;
+display: none;
+min-width: 200px;
+right: 50%;
+transform: translateX(-65%);
+margin-top: -1.6rem;
+background-color: rgb(86, 86, 86);
+/* width: 100%; */
+box-sizing: border-box;
+
+}
+
+
+div.menu-dropdown *{
+    position: relative;
+    display: block;
+    }
+nav a:hover{
+    color: whitesmoke!important;
+    background-color: rgb(86, 86, 86);
+    border-bottom: 1px solid rgb(86, 86, 86);
+
+
+}
+nav li:hover > a{
+    color: whitesmoke!important;
+    background-color: rgb(86, 86, 86);
+    border-bottom: 1px solid rgb(86, 86, 86);
+    border-bottom: 1px solid #131313;
+}
+nav a.selected{
+    color: whitesmoke;
+    background-color: rgb(86, 86, 86);
+    border-bottom: 1px solid rgb(86, 86, 86);
+}
+/*nav .dd:hover > div.menu-dropdown{*/
+/*    display: block;*/
+/*    opacity: 1;*/
+
+/*    background-color: red;*/
+/*}*/
+
+div.spacer{
+display: inline-block;
+position: relative;
+background-color: transparent;
+min-width: 14rem;
+color: whitesmoke;
+
+}
+
+
+.step{
+
+}
+
+h1{
+    position: relative;
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 5rem;
+    font-size: 120px;
+    text-wrap: wrap;
+    font-weight: 300;
+
+    /* border:1px solid yellow; */
+}
+.container{
+    max-width: 80%;
+    width: 80%;
+    min-width: 1000px;
+    height: 100%;
+    display: block;
+    position: relative;
+    box-sizing: border-box;
+    margin: 0 auto;
+
+}
+.form-wrapper{
+    z-index: 10;
+    display: block;
+    position: absolute;
+    left: 50%;
+    top:  -10%;
+    transform: translateX(-50%);
+    background-color: whitesmoke;
+    height: fit-content;
+    padding-block: .1rem!important;
+
+}
+
+.form-wrapper > form{
+    margin-block: .1rem!important;
+}
+
+.form-wrapper > a{
+    text-decoration: none;
+    padding-inline: .1rem;
+    color: black;
+    transition: .3s;
+}
+.form-wrapper > a:hover{
+    text-decoration: none;
+    padding-inline: .1rem;
+    color: #8c8c8c;
+}
+.container > h2{
+display: block;
+width: 100%;
+box-sizing: border-box;
+}
+.material-symbols-outlined{
+    vertical-align: bottom!important;
+    display: inline-block;
+    vertical-align: super;
+    height: fit-content;
+    margin-top: 1.5rem;
+    box-sizing: border-box;
+    position: relative;
+    /* border: 1px solid red; */
+}
+
+div.images {
+    display: block;
+    position: relative;
+    box-sizing: border-box;
+    z-index: 1;
+
+}
+
+div.images > img{
+    box-sizing: border-box;
+    max-width: 100%;
+    z-index: 1;
+    min-width: 100%;
+    max-height: 800px;
+    object-fit: cover;
+}
+form.step-1-form{
+    font-family: "Roboto Slab", serif;
+    display: flex;
+    width: fit-content;
+    background-color: white;
+    padding-block: 1rem;
+    font-size: 17px;
+    /* border:1px solid red; */
+    padding-inline: 1rem;
+    /*box-shadow: 2px 2px 10px #131313;*/
+    z-index: 2;
+    margin: 0 auto;
+}
+form.step-1-form > .form-group-block > label{
+    font-family: "Roboto Slab", serif;
+    font-size: 20px;
+}
+form.step-1-form > .form-group-block > input {
+    font-family: "Roboto Slab", serif;
+    font-size: 17px;
+    box-sizing: border-box;
+    padding: .5rem;
+    min-width: 80px;
+    border: 1px solid black;
+    background-color: white;
+    cursor: pointer;
+}
+form.step-1-form > .form-group-block > select::before{
+    font-family: "Roboto Slab", serif;
+    cursor: pointer;
+}
+form.step-1-form > .form-group-block > select {
+    font-family: "Roboto Slab", serif;
+    font-size: 18px;
+
+    box-sizing: border-box!important;
+    margin: 0;
+    padding: .5rem;
+
+
+    min-width: 80px;
+    border: 1px solid black;
+    background-color: white;
+    cursor: pointer;
+}
+form.step-1-form >  button {
+    font-family: "Roboto Slab", serif;
+    font-size: 20px;
+    margin-inline: 1rem;
+    border: 0px solid transparent;
+    padding-block: .7rem;
+    padding-inline: 1rem;
+
+
+    min-width: 100px;
+    border: 1px solid black;
+    background-color: white;
+    cursor: pointer;
+    transition: .3s;
+
+}
+
+form.step-1-form >  button:hover {
+   color: white;
+    background-color: black;
+
+}
+form.step-1-form > .form-group-block {
+    margin-inline: 1rem;
+    min-width: fit-content;
+}
+form.step-1-form > .form-group-block > *{
+    display: block;
+    margin-inline: .8rem;
+}
+
+div.card-wrapper{
+    display: flex;
+    max-width: 100%;
+    width:100%;
+    overflow-x: auto;
+    position: relative;
+    margin: 0 auto;
+    min-height: 500px;
+
+    padding-block: .5rem;
+    box-sizing: border-box;
+    margin-block: 1rem;
+    min-width: 1000px;
+}
+.page-content{
+    display: block;
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+}
+div.card-wrapper > .room-card{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    min-height: fit-content;
+    margin-inline: .3rem;
+    box-sizing: border-box;
+    max-width: 400px;
+    justify-content: space-between;
+    /* border:1px solid black; */
+
+    padding:0;
+    padding-inline: .5rem;
+    background-color: whitesmoke;
+    box-shadow: 1px 2px 10px #131313;
+}
+.room-card > img {
+    box-sizing: border-box;
+    object-fit: cover;
+
+}
+div.buttons {
+    display: block;
+    margin-block: .5rem;
+    padding:0;
+}
+div.buttons > a {
+    display: inline-block;
+    position: relative;
+    font-size: 19px;
+    background-color: #131313;
+    padding: .5rem;
+    color: whitesmoke;
+    text-decoration: none;
+    border: 1px solid #131313;
+    cursor: pointer;
+}
+.group-block{
+   display: flex;
+   box-sizing: border-box;
+   width: 100%;
+}
+
+.check_in_input{
+    border-left: 2px solid #131313;
+}
+.check_out_input{
+    border-right: 2px solid #131313;
+}
+div.buttons > button {
+    display: inline-block;
+    margin:0;
+    font-size: 21px;
+    position: relative;
+    border: 1px solid #131313;
+    background-color: whitesmoke;
+    padding: .5rem;
+    float: right;
+    cursor: pointer;
+}
+
+.room-card > .title{
+    text-align: center;
+    background-color: whitesmoke;
+    padding: .5rem;
+}
+.footer{
+    display: block;
+    position: relative;
+    bottom: 0;
+
+    width: 100%;
+    /*border:1px solid red;*/
+    box-sizing: border-box;
+}
+
+
+/*
+* RESERVATION FORM UNDER HERE
+*/
+.reservation-form{
+    width: 100%;
+    height:auto;
+
+}
+.form-room-info-group{
+    display: flex;
+    box-sizing: border-box;
+    color: #131313;
+}
+.form-room-info-group> *:nth-child(even){
+    background-color: whitesmoke;
+}
+
+
+
+
+/*
+*   Reservation form END
+*/
+
+
+@media only screen and (max-width: 1830px) {
+    div.spacer{
+        display: none;
+    }
+
+}
+
+@media only screen and (max-width: 1560px) {
+    .top-bar{
+        display: flex;
+        position: relative;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: center;
+        width: 100%;
+        box-sizing: border-box;
+        padding-block: .8rem;
+        background-color: rgb(31, 31, 31);
+        color: whitesmoke;
+        padding-inline: 1rem ;
+        font-size: 18px;
+        flex-wrap: wrap;
+        min-width: 10px!important;
+    }
+
+    .top-bar-wrapper > .group > *{
+        margin-inline: .5rem;
+    }
+
+    .top-bar-wrapper > select {
+        background-color: transparent;
+        border: 1px solid white;
+        color: white;
+        font-size: 17px;
+    }
+    a.email{
+        text-decoration: none;
+        color:rgb(255, 252, 240);
+    }
+
+    nav {
+        display: block;
+        position: relative;
+        margin:0;
+
+
+        font-size: 21px;
+
+
+        color: rgb(31, 31, 31);
+        background-color: whitesmoke;
+        line-height: 5rem;
+        border-bottom: 1px solid #131313;
+    }
+    nav > .nav-wrapper{
+        display: flex;
+        position: relative;
+        flex-direction: row;
+        margin: 0 auto;
+        flex-shrink: 1;
+        flex-wrap: wrap;
+        padding-block: .8rem;
+        padding-inline: 0rem!important;
+        width:80%;
+        min-width: 10px!important;
+        justify-content: space-between;
+    }
+    nav ul{
+        margin:0;
+        padding:0;
+    }
+    nav ul * {
+        box-sizing: border-box;
+    }
+    nav > ul ul {
+        display: block;
+        position: absolute;
+    }
+    nav a {
+        display: inline;
+        position: relative;
+        color: rgb(31, 31, 31);
+        text-decoration: none;
+        padding-inline: .5rem;
+        border-bottom: 1px solid transparent;
+        transition: .3s;
+        text-align: center;
+        padding-inline: .8rem!important;
+        /*padding: .4rem;*/
+        box-sizing: border-box;
+        /* border:1px solid yellow; */
+    }
+    nav .nav-group{
+        display: flex;
+        margin: 0 auto;
+        justify-content: space-between;
+        /*border: 1px solid red;*/
+    }
+
+    div.spacer{
+        display: none!important;
+        /*border:1px solid red;*/
+    }
+
+    nav .nav-group li{
+        display: inline;
+        padding-block: .0rem; /*changed 05-24 */
+        padding: 0;
+        /* border:1px solid green; */
+    }
+    nav img {
+        max-width: 350px;
+        max-height: 100px ;
+        margin: 0 auto;
+        /* border: 1px solid red; */
+    }
+    div.menu-dropdown{
+        position: absolute;
+        display: none;
+        min-width: 200px;
+        right: 50%;
+        transform: translateX(-65%);
+        margin-top: -1.6rem;
+        background-color: rgb(86, 86, 86);
+        /* width: 100%; */
+        box-sizing: border-box;
+
+    }
+
+
+    div.menu-dropdown *{
+        position: relative;
+        display: block;
+    }
+    nav a:hover {
+        color: whitesmoke;
+        background-color: rgb(86, 86, 86);
+        border-bottom: 1px solid rgb(86, 86, 86);
+
+
+    }
+    nav a.selected{
+        color: whitesmoke;
+        background-color: rgb(86, 86, 86);
+        border-bottom: 1px solid rgb(86, 86, 86);
+    }
+    nav .dd:hover > div.menu-dropdown{
+        display: block!important;
+        opacity: 1;
+
+        background-color: red;
+    }
+
+    div.spacer{
+        display: inline-block;
+        position: relative;
+        background-color: transparent;
+        min-width: 14rem;
+        color: whitesmoke;
+
+    }
+    h1{
+        position: relative;
+        display: block;
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;
+        margin-bottom: 5rem;
+        font-size: 100px;
+        text-wrap: wrap;
+        font-weight: 300;
+
+        /* border:1px solid yellow; */
+    }
+    .container{
+        max-width: 100%;
+        width: 100%;
+        min-width: 0px;
+        height: 100%;
+        display: block;
+        position: relative;
+        box-sizing: border-box;
+        margin: 0 auto;
+
+    }
+    .form-wrapper{
+        z-index: 10;
+        display: block;
+        position: relative;
+        width:100%;
+        max-width: 100%;
+        padding:0!important;
+        box-sizing: border-box;
+
+    }
+
+    .form-wrapper > form {
+        display: flex;
+        flex-direction: column;
+        max-width: 100%;
+        width: 100%!important;
+        margin:0!important;
+        text-align: center;
+        box-sizing: border-box;
+    }
+
+    .form-wrapper > form > .input-group-block > input,select,label {
+        font-size: 20px;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        margin: 0;
+        padding-block: 1rem;
+    }
+    .flatpickr-input {
+        width: 100%!important;
+        max-width: 100%!important;
+        box-sizing: border-box!important;
+    }
+    .form-wrapper > form > button {
+        margin-block: .3rem;
+        max-width: 100%;
+    }
+    .container > h2{
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .material-symbols-outlined{
+        /*vertical-align: bottom!important;*/
+        display: inline-block;
+        vertical-align: super;
+        height: fit-content;
+        margin-top: .8rem;
+        box-sizing: border-box;
+        position: relative;
+        /* border: 1px solid red; */
+    }
+
+    div.images {
+        display: block;
+        position: relative;
+        box-sizing: border-box;
+        z-index: 1;
+
+    }
+
+    div.images > img{
+        box-sizing: border-box;
+        max-width: 100%;
+        z-index: 1;
+        min-width: 100%;
+        max-height: 800px;
+        object-fit: cover;
+    }
+    form.step-1-form{
+        display: flex;
+        width: fit-content;
+        background-color: whitesmoke;
+        padding-block: 1rem;
+        font-size: 17px;
+        /* border:1px solid red; */
+        padding-inline: 1rem;
+        box-shadow: 2px 2px 10px #131313;
+        z-index: 2;
+        margin: 0 auto;
+    }
+    form.step-1-form > .form-group-block{
+        box-sizing: border-box;
+    }
+
+    form.step-1-form > .form-group-block > input {
+        font-size: 20px;
+
+
+        min-width: 100%;
+        width: 100%;
+        max-width: 100%;
+
+        border: 1px solid black;
+        background-color: white;
+        cursor: pointer;
+        padding: 0;
+        margin:0;
+        padding-block: 1rem;
+        box-sizing: border-box!important;
+    }
+    form.step-1-form > .form-group-block > select::before{
+        cursor: pointer;
+    }
+    form.step-1-form > .form-group-block > select {
+        font-size: 18px;
+        box-sizing: border-box;
+
+
+        min-width: 80px;
+        border: 1px solid black;
+        background-color: white;
+        cursor: pointer;
+    }
+    form.step-1-form >  button {
+        font-size: 20px;
+        margin-inline: 1rem;
+        border: 0px solid transparent;
+        padding-block: .7rem;
+        padding-inline: 1rem;
+
+        color:black;
+        min-width: 100px;
+        border: 1px solid black;
+        background-color: white;
+        cursor: pointer;
+        transition: .3s;
+
+    }
+
+    form.step-1-form >  button:hover {
+        color: white;
+        background-color: black;
+
+    }
+    form.step-1-form > .form-group-block {
+        margin-inline: 1rem;
+        min-width: fit-content;
+    }
+    form.step-1-form > .form-group-block > *{
+        display: block;
+        margin-inline: .8rem;
+    }
+
+    div.card-wrapper{
+        display: flex;
+        max-width: 100%;
+        width:100%;
+        overflow-x: auto;
+        position: relative;
+        margin: 0 auto;
+        height: 500px;
+        padding-block: .5rem;
+        box-sizing: border-box!important;
+        margin-block: 1rem;
+        min-width: 100%;
+    }
+    .page-content{
+        display: block;
+        position: relative;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    div.card-wrapper > .room-card{
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        min-height: 400px;
+        margin-inline: .3rem;
+        box-sizing: border-box;
+        max-width: 100%;
+        justify-content: space-between;
+        padding:0;
+        padding-inline: .5rem;
+        background-color: whitesmoke;
+        box-shadow: 1px 2px 10px #131313;
+    }
+    .room-card > img {
+        box-sizing: border-box;
+        object-fit: cover;
+
+    }
+    div.buttons {
+        display: block;
+        margin-block: .5rem;
+        padding:0;
+    }
+    div.buttons > a {
+        display: inline-block;
+        position: relative;
+        font-size: 19px;
+        background-color: #131313;
+        padding: .5rem;
+        color: whitesmoke;
+        text-decoration: none;
+        border: 1px solid #131313;
+        cursor: pointer;
+    }
+    .group-block{
+        display: flex;
+        box-sizing: border-box;
+        width: 100%;
+    }
+
+    .check_in_input{
+        border-left: 0px solid #131313;
+    }
+    .check_out_input{
+        border-right: 0px solid #131313;
+    }
+    div.buttons > button {
+        display: inline-block;
+        margin:0;
+        font-size: 21px;
+        position: relative;
+        border: 1px solid #131313;
+        background-color: whitesmoke;
+        padding: .5rem;
+        float: right;
+        cursor: pointer;
+    }
+
+    .room-card > .title{
+        text-align: center;
+        background-color: whitesmoke;
+        padding: .5rem;
+        font-size: 20px;
+    }
+    .footer{
+        display: block;
+        position: relative;
+        bottom: 0;
+
+        width: 100%;
+        border:1px solid red;
+        box-sizing: border-box;
+    }
+
+
+
+    /*
+    * RESERVATION FORM UNDER HERE
+    */
+    .form-room-info-group{
+        display: flex;
+        flex-direction: column;
+        border-inline: 1px solid #181818;
+    }
+
+    .form-room-info-group > .general-data{
+        display: block;
+        margin: 0;
+        padding: .2rem;
+
+    }
+
+    .form-room-info-group > .general-data > .div-group.inline{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+
+    }
+
+
+
+    .reservation-details{
+        display: flex;
+        width: 100%;
+        box-sizing: border-box;
+        padding-block: .8rem;
+        padding-inline: .5rem;
+    }
+
+
+
+    /*
+    *   Reservation form END
+    */
+
+
+
+
+
+} /*
+ * @MEDIA QUERY ENDS HERE
+*/
+
+
+@media only screen and (max-width: 1300px) {
+
+    .container{
+        min-width: 0px!important;
+    }
+
+    .top-bar{
+        min-width: 0px!important;
+        padding:0;
+    }
+    ul{
+        min-width: 0px!important;
+    }
+    li{
+        min-width: 0px!important;
+        padding: 0;
+    }
+    nav a{
+        min-width: 0px!important;
+        padding:8rem;
+        margin:0!important;
+    }
+.top-bar-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-width: 0px!important;
+    margin:0;
+    padding:0!important;
+}
+.top-bar-wrapper .group{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+nav{
+    padding: 0!important;
+    min-width: 30px!important;
+}
+div.menu-dropdown{
+    min-width: 0px!important;
+}
+    .nav-wrapper{
+        margin:0 auto!important;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        padding:0!important;
+        width: 100%!important;
+        padding-inline: 0px;
+        max-width: 100%;
+        box-sizing: border-box!important;
+        line-height: normal;
+
+    }
+    .nav-wrapper a{
+        padding-block: .8rem;
+
+    }
+    .nav-wrapper .logo{
+        padding-block: .5rem;
+    }
+    .nav-wrapper .nav-group{
+        display: flex;
+        flex-direction: column;
+    }
+    .nav-wrapper > img{
+        object-fit: contain;
+        box-sizing: border-box;
+        margin:0 auto;
+        padding:0;
+    }
+    .nav-wrapper ul{
+        width: 100%;
+        margin: 0;
+        padding:0;
+        box-sizing: border-box;
+        min-width: none;
+
+    }
+    .nav-wrapper ul > li{
+        display: block;
+        box-sizing: border-box;
+        margin-inline: 0;
+    }
+    .nav-wrapper ul > li > a{
+        display: block;
+        margin-inline: 0;
+    }
+
+    div.card-wrapper{
+        flex-direction: column!important;
+        min-height: fit-content;
+        max-height: max-content;
+    }
+
+    div.card-wrapper > .room-card{
+        margin: .5rem;
+        min-height: fit-content;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    ul.sub {
+        display: block;
+        position: relative;
+        background-color: #afafaf;
+        max-width: 80%;
+        margin: 0 auto;
+        border: 1px dotted black;
+    }
+}

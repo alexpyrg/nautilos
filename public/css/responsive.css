@@ -1,0 +1,62 @@
+@charset "UTF-8";
+/* CSS Document */
+@media only screen and (max-width: 1200px) {
+	.container { width:99%; }
+	.container .subContainer { width:100%; }
+	.logo { width:250px; height:auto; max-width:336px; }
+
+	.logo_slogan { display:none; }
+
+	.langs { margin-right:15px; }
+	.langs img { width:32px; height:28px; margin-top:10px; }
+	.langs img { opacity:0.3; }
+	.langs img:hover { opacity:1; }
+	.langs img.active { opacity:1; }	
+
+	/* --> COLS */
+
+	
+	.col1of5 { position:relative; width:100%; margin-right:10px; float:left; border:solid 0px #FFFFFF; text-align:center; }
+	.col1of5 label { display:block; padding:10px; font-size:15px; }
+	.col1of5 input,select { margin:10px; width:90%; padding:10px; border:0; background-color:#FDFDFD; font-size:13px; color:#039; }
+	.col1of5 select { width:93%; }
+	
+	.btnReservationSlogan img { float:none; }
+	
+	.ssl img { margin-left:auto; }
+	
+	.colA { width:100%; }
+	.colB { width:100%; text-align:center !important; }
+
+	.col-fast { position:relative; width:100%; float:left; border:solid 0px #DFDFDF; margin:10px 5px 10px 0px; }
+	.col-fast .btnReservationSlogan { margin-top:0 !important; }
+	.col-fast input,select { width:180px; margin:10px; padding:5px; border:0; background-color:#FDFDFD; font-size:13px; color:#039; border-radius:4px; }	
+	
+	.colA #owl .item img{
+		display: block;
+		width: 100%;
+		height: auto !important;
+	}
+	
+	.col1of4 { width:49%; margin-bottom:10px; }
+
+}
+
+
+
+@media only screen and (max-width: 1000px) {
+
+	
+	#mMenu ul li { display:block; }
+	#mMenu ul ul { position:relative; display:block; margin-left:25px; margin-right:25px; border:dashed 1px #CCCCCC; }
+	#mMenu ul ul li { width:100%; }
+	#mMenu ul ul ul { position:relative; top:inherit; left:auto; }	
+	#mMenu ul li:hover { background-color:inherit; }
+	
+
+	.col1of3 { width:100%; margin-bottom:10px; }
+	
+	.col1of4 { width:100%; margin-bottom:10px; }	
+
+	
+}

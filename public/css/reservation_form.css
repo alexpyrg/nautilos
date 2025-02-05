@@ -1,0 +1,397 @@
+
+.form-container{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    padding: 0;
+    box-sizing: border-box;
+    max-width: 1200px;
+    margin: 1rem auto;
+    box-shadow: 1px 1px 10px 2px #242424;
+}
+
+.step-wrapper{
+    display: flex;
+    width: 100%;
+    position: relative;
+    box-sizing: border-box;
+}
+.steps{
+    height: auto;
+    min-height: fit-content;
+    width: 100%;
+    text-align: center;
+    /*border: 1px solid red;*/
+}
+.step{
+    display: inline-block;
+    position: relative;
+    box-sizing: border-box;
+    padding: 1rem;
+    min-width: 180px;
+    background-color: whitesmoke;
+    color: #131313;
+    border: 2px solid whitesmoke;
+    padding-block:.6rem;
+    font-size: 18px;
+}
+
+.step.active{
+    background-color: black;
+    color: whitesmoke;
+    border: 2px solid whitesmoke;
+}
+
+
+.bg-lightgray{
+    background-color: #dadada;
+}
+
+.general-data.hide-form-details{
+    display: none;
+    width:0!important;
+    min-width: 0!important;
+    overflow: hidden!important;
+    transition: .3s;
+}
+
+
+.room-image{
+    max-width: 100%;
+    object-fit: cover;
+    box-sizing: border-box;
+}
+
+.general-data, .general-form {
+    display: inline-flex; /* Display as inline but keep flex properties */
+    flex-direction: column; /* Keep elements inside in a column */
+    max-width: 50%;
+    min-width: 50%;
+    /* Add any necessary width adjustments here */
+    /*border: 1px solid red;*/
+    font-size: 17px;
+}
+.step3-gn-f{
+    max-width: 100%;
+}
+.step2 > pre {
+    max-width: 100%;
+    display: block;
+    position: relative;
+    text-wrap: wrap;
+    padding-inline: .5rem;
+}
+
+.form-group.fg-conf > span {
+    display: inline-block;
+    position: relative;
+    padding-block: 1rem;
+    padding-inline: .2rem;
+    width: 50%;
+    box-sizing: border-box;
+}
+
+.form-group.fg-conf {
+    display: block;
+    height: fit-content;
+    padding-inline: .5rem;
+    padding-block: .4rem;
+}
+.form-group.fg-conf{
+    border-bottom: 1px solid black;
+}
+/*.form-group.fg-conf:nth-child(odd){*/
+/*    background-color: #afafaf;*/
+/*}*/
+.step2 > pre > h2{
+    margin: 0 auto;
+    padding:0;
+    text-align: center;
+}
+.room-details-info{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    box-sizing: border-box!important;
+    background-color: #242424;
+}
+.room-details-info > span {
+    width: 50%;
+    box-sizing: border-box;
+    padding: .5rem;
+
+    color: white;
+    font-weight: 600;
+}
+.room-details-info:nth-child(even) {
+
+    background-color: #313131;
+
+}
+.reservation-details{
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    margin:0;
+}
+.reservation-details > span{
+    width: 50%;
+    box-sizing: border-box;
+    padding: .5rem;
+
+    color: #131313;
+
+}
+.separator{
+    padding: .0rem;
+    font-size: 17px;
+}
+
+.general-form{
+    display: flex;
+    flex-direction: column;
+    border-left: 1px solid #242424;
+}
+.form-group.inline{
+    display: flex;
+    flex-direction: row;
+    margin-block: .2rem;
+
+}
+.form-group.inline > input,label,select,button{
+    max-width: 50%;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 16px;
+    padding: .5rem;
+    background-color: whitesmoke;
+    color: #242424;
+
+
+}
+
+.form-group.inline > input,select,button{
+    border: 1px solid #131313;
+    color: #131313;
+    transition: .3s;
+}
+
+
+.form-group.inline > input:focus,select:focus,button:focus{
+    background-color: white;
+    outline: none;
+}
+.form-group-block{
+    display: flex;
+    position: relative;
+    width: 100%;
+    max-width: 500px!important;
+    margin: 0 auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    /*border: 2px solid red;*/
+}
+
+.form-group-block > button,input[type=submit]{
+    display: block;
+    position: relative;
+    padding-block: .7rem;
+    padding-inline: .9rem;
+    min-width: 150px;
+    font-size: 20px;
+    margin: 0 auto!important;
+    border: 1px solid #242424;
+    background-color: #242424;
+    color: whitesmoke;
+    font-weight: 600;
+    transition: .3s;
+    cursor: pointer;
+    margin-inside: .4rem;
+
+}
+
+.form-group-block > button:hover,input[type=submit]:hover{
+
+    border: 1px solid black;
+    background-color: #ffffff;
+    color: #242424;
+
+}
+/* FORM MODAL BELOW **/
+.form-modal-bg{
+    width: 100%;
+    height: 100%;
+    position: sticky;
+    display: none;
+    box-sizing: border-box;
+    background-color: rgba(16, 16, 16, 0.91);
+    z-index: 11110;
+}
+.modal-open{
+    display: block;
+    opacity:1;
+    animation: 1s showModal;
+}
+@keyframes showModal {
+    0%{
+        opacity: 0;
+        display: none;
+    }
+    100%{
+        opacity: 1;
+        display: block;
+    }
+}
+
+.form-modal{
+    display: block;
+    position: absolute;
+    box-sizing: border-box;
+    right: 50%;
+    top: 50%;
+    z-index: 111111;
+    transform: translate(-50%,-50%);
+}
+.form-modal-title{
+    color: white;
+    background-color: #9D968D ;
+}
+.form-modal-message{
+    color: #9D968D;
+}
+.form-modal-button{
+    background-color: #9D968D;
+    padding: .4rem;
+    color: white;
+    transition: .3s;
+}
+.form-modal-button:hover{
+    background-color: #6e6259;
+}
+.form_data_validation{
+    display: flex;
+    flex-direction: column;
+}
+
+.form_data_validation > .form-group{
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+}
+
+.form_data_validation > .form-group > span{
+    max-width: 50%;
+    padding: 0;
+    margin:0;
+    box-sizing: border-box;
+}
+
+
+
+
+.slidecontainer {
+    width: 100%; /* Width of the outside container */
+}
+
+/* The slider itself */
+.slider {
+    -webkit-appearance: none;  /* Override default CSS styles */
+    appearance: none;
+    width: 100%; /* Full-width */
+    height: 25px; /* Specified height */
+    background: #d3d3d3; /* Grey background */
+    outline: none; /* Remove outline */
+    opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+    transition: opacity .2s;
+}
+
+/* Mouse-over effects */
+.slider:hover {
+    opacity: 1; /* Fully shown on mouse-over */
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    width: 25px; /* Set a specific slider handle width */
+    height: 25px; /* Slider handle height */
+    background: #04AA6D; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+}
+
+.slider::-moz-range-thumb {
+    width: 25px; /* Set a specific slider handle width */
+    height: 25px; /* Slider handle height */
+    background: #04AA6D; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+}
+
+
+
+
+
+
+
+@media only screen and (max-width: 1560px){
+    .form-room-info-group{
+        display: flex;
+        flex-direction: column;
+        border-inline: 1px solid #181818;
+    }
+
+    .form-room-info-group > .general-data{
+        display: block;
+        margin: 0;
+        padding: .2rem;
+
+    }
+
+    .form-room-info-group > .general-data > .div-group.inline{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+
+    }
+}
+@media only screen and (max-width: 750px){
+    .form-container{
+        flex-direction: column;
+    }
+    .general-data{
+        max-width: 100%;
+    }
+    .general-form{
+        max-width: 100%;
+    }
+
+    .form-group.inline{
+        flex-direction: column;
+    }
+    .form-group.inline > input,label,select,button{
+        max-width: 100%;
+        width: 100%;
+        box-sizing: border-box;
+        font-size: 18px;
+        padding: .5rem;
+        background-color: whitesmoke;
+        /*color: #242424;*/
+        padding-block: .8rem;
+
+    }
+    .form-group-block{
+        margin-top: 1rem;
+    }
+    .form-group-block > button,input[type=submit]{
+        display: block;
+        width: 100%;
+        padding: 1rem;
+
+    }
+}

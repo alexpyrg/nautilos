@@ -1,0 +1,19 @@
+.alert{
+    display: block;
+    max-width: 600px;
+    width: 100%;
+    height: fit-content;
+    padding: .9rem;
+
+}
+.alert-success{
+    background-color: #b6fdb6;
+    color: darkgreen;
+    border-left: darkgreen;
+}
+
+.alert-error{
+    background-color: #ffa4ac;
+    color: darkred;
+    border-left: 2px solid darkred;
+}

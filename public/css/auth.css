@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
+html{
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin:0;
+    padding:0;
+
+    font-family: "Roboto Slab", serif;
+}
+
+body{
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin:0;
+    padding:0;
+
+    background: linear-gradient(
+        to right,
+        #2c6fff 0%,
+        #2c6fff 50%,
+        #ffffff 50%,
+        #ffffff 100%
+    );
+
+}
+
+.login-div{
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap-reverse;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    width: 40%;
+    /*border: 1px solid #a3a3a3;*/
+    padding-block: 0;
+    padding-inline: 0;
+    height: fit-content;
+    box-shadow: 1px 1px 10px #131313;
+    transition: ease-in .4s;
+}
+
+.login-div > form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 50%;
+    /*border: 1px solid red;*/
+    float: right;
+    box-sizing: border-box;
+    margin:0;
+    padding: .8rem;
+    width: 100%;
+    text-align: center;
+}
+.login-div > form > h2 {
+    margin: 0;
+}
+
+.login-div > img {
+    max-width: 50%;
+    box-sizing: border-box;
+    padding: .8rem;
+
+}
+
+.login-div > .input_group{
+    box-sizing: border-box;
+}
+.login-div label,input {
+    display: block;
+    width: 100%;
+    font-size: 16px;
+    margin-block: .5rem;
+
+}
+.login-div > form > .input_group.block> label{
+    width: 100%;
+    text-align: left;
+    font-size: 18px;
+}
+.login-div > form > .input_group.block > label,input {
+    padding: .5rem;
+    box-sizing: border-box;
+    /*border: 1px solid #131313;*/
+}
+
+.login-div > form > .input_group.inline > button,input[type=submit] {
+    display: inline;
+    padding: .5rem;
+    box-sizing: border-box;
+    border: 0;
+    font-size: 16px;
+    margin-block: .5rem;
+    max-width: 49%;
+    transition: .3s;
+
+}
+
+.login-div .error{
+    color: red;
+    border-bottom: 1px solid red;
+}
+
+a.button{
+    display: inline;
+    padding: .5rem;
+    box-sizing: border-box;
+    border: 0;
+    background-color: darkred;
+    color: white;
+    font-weight: 500 ;
+    font-size: 16px;
+    margin-block: .5rem;
+    width: 50%;
+    transition: .3s;
+}
+
+a.button:hover{
+    background-color: #5e0000;
+}
+
+.subton{
+    background-color: green;
+    color: white;
+    transition: .3s;
+}
+.subton:hover{
+    cursor: pointer;
+    background-color: darkgreen;
+}
+
+@media only screen and (max-width: 1700px){
+    .login-div {
+        max-width: 60%;
+        width: 60%;
+    }
+}
+@media only screen and (max-width: 1100px){
+    .login-div {
+        max-width: 80%;
+        width: 80%;
+
+    }
+}
+
+@media only screen and (max-width: 800px){
+    .login-div {
+        max-width: 100%;
+        width: 100%;
+
+    }
+    body{
+        background: white!important;
+    }
+
+    .login-div > form{
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .login-div > img{
+        display: none;
+    }
+}

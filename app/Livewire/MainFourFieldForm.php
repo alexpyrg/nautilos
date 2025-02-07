@@ -2,21 +2,14 @@
 
 namespace App\Livewire;
 
-use App\Models\Locale;
-use App\Models\Page;
-use App\Models\PageContent;
-use App\Models\RoomTranslations;
-use App\Models\roomType;
 use Carbon\Carbon;
-use Illuminate\Support\Facades\App;
-use Illuminate\Support\Facades\File;
 use Livewire\Attributes\Validate;
 use Livewire\Component;
 
 class MainFourFieldForm extends Component
 {
-    // Form properties
-    #[Validate('required')]
+    // Form properties with attribute-based validation (if using Livewire v3)
+    #[Validate('required|date_format:d-m-Y|after_or_equal:today')]
     public $trip_date;
 
     #[Validate('required|not_in:0')]
@@ -36,7 +29,6 @@ class MainFourFieldForm extends Component
     {
         return view('livewire.main-four-field-form')->with([
             'trip_types' => $this->trip_types,
-
         ]);
     }
 
@@ -45,17 +37,22 @@ class MainFourFieldForm extends Component
      */
     public function next_step()
     {
-        // Validate form inputs
-        dd($this->validate());
+        // First, validate the form inputs. The date_format rule ensures
+        // the incoming trip_date is in 'd-m-Y' format.
+        $validatedData = $this->validate();
 
-        // Save data to session
+        // Now convert the trip_date string into a Carbon instance.
+        // You might also choose to keep it as a string if your reservation form expects that.
+        $validatedData['trip_date'] = Carbon::createFromFormat('d-m-Y', $validatedData['trip_date']);
+
+        // Save data to session.
         session()->put('reservationData', [
-            'trip_date' => $this->trip_date,
-            'trip_type' => $this->trip_type,
-            'locale' => app()->getLocale(),
+            'trip_date' => $validatedData['trip_date']->format('Y-m-d'), // or keep as needed
+            'trip_type' => $validatedData['trip_type'],
+            'locale'    => app()->getLocale(),
         ]);
 
-        // Redirect to Step 1
+        // Redirect to the reservation form. (Using a session to transfer data here is acceptable.)
         return redirect()->route('reservation.new', ['#your_booking_details']);
     }
 }

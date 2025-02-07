@@ -627,6 +627,8 @@ label > div > img{
     /*background-repeat: no-repeat;*/
     /*background-size: cover;*/
 }
+
+
 .reservation-form > .sub-container-60 >.material-symbols-outlined{
     /*display: inline-block!important;*/
     /*position: relative!important;*/
@@ -2278,6 +2280,7 @@ table.simple-table, .simple-table th, .simple-table td {
 
     body{
         overflow-x: hidden;
+        font-size: 18px;
     }
     html{
         overflow-x: hidden;

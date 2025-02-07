@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Locale;
 use App\Models\TripType;
+use App\Models\TripTypeTranslation;
 use Illuminate\Http\Request;
 
 class TripTypeController extends Controller
@@ -33,22 +35,45 @@ class TripTypeController extends Controller
     }
 
     // Show the form to edit a trip type
-    public function edit(   Request $tripType)
+    public function edit(Request $req)
     {
-        dd($tripType->all());
-        return view('trips.edit', compact('tripType'));
+//        dd($req->id);
+        $trip = TripType::where('id', $req->id)->first();
+        $locales = Locale::all(); // Get all available languages
+
+        $tripTranslations = TripTypeTranslation::where('trip_type_id', $trip->id)->get();
+        $translationsByLocale = $tripTranslations->pluck('name', 'locale_id')->toArray();
+
+
+
+        return view('trips.edit', compact('trip', 'locales', 'tripTranslations', 'translationsByLocale'));
     }
 
     // Update a trip type
-    public function update(Request $request, TripType $tripType)
+    public function update(Request $request)
     {
 
+//        dd($request);
+        $tripType = TripType::where('id', $request->id)->first();
+
         $request->validate([
-            'name' => 'required|string|max:255|unique:trip_types,name,' . $tripType->id,
+//            'name' => 'required|string|max:255|unique:trip_types,name,',
+            'translations' => 'array',
+            'name' => 'required',
+            'translations.*' => 'nullable|string|max:255',
         ]);
 
         $tripType->update($request->only('name'));
-        $tripType->save();
+
+
+        foreach ($request->translations as $localeId => $translationText) {
+            if ($translationText) {
+                TripTypeTranslation::updateOrCreate(
+                    ['trip_type_id' => $tripType->id, 'locale_id' => $localeId],
+                    ['name' => $translationText]
+                );
+            }
+        }
 
         return redirect()->route('trips.index')->with('success', 'Trip type updated successfully!');
     }

@@ -110,8 +110,8 @@ Route::get('/admin/mailing/template/{id}', function (){
 })->middleware('auth');
 
 //DEBUG-ROUTE
-Route::get('/reservation/new', \App\Livewire\ReservationFormNew::class)->name('reservation.new');
-
+//Route::get('/reservation/new', \App\Livewire\ReservationFormNew::class)->name('reservation.new');
+Route::get('/reservation', \App\Livewire\TripReservationForm::class )->name('reservation.new')->middleware('auth');
 Route::get('/admin/clear-and-recache', function(){
     $clearcache = \Illuminate\Support\Facades\Artisan::call('cache:clear');
     echo("Cache cleared<br>");
@@ -207,7 +207,7 @@ Route::post('/admin/seasons', [\App\Http\Controllers\SeasonsController::class, '
 
 //Admin - Trips
 Route::get('/admin/trip-prices/create', [\App\Http\Controllers\TripPriceController::class, 'create'])->middleware('auth')->name('trip-prices.create');
-
+Route::resource('trip-prices', TripPriceController::class);
 // Store a new trip price
 Route::post('/admin/trip-prices', [\App\Http\Controllers\TripPriceController::class, 'store'])->middleware('auth')->name('trip-prices.store');
 
@@ -218,9 +218,13 @@ Route::prefix('admin')->group(function () {
     Route::resource('trips', \App\Http\Controllers\TripTypeController::class)->except('show');
     Route::post('/trips', [\App\Http\Controllers\TripTypeController::class, 'store'])->name('admin.trips.store');
     Route::get('/trips/create', [\App\Http\Controllers\TripTypeController::class, 'create'])->name('admin.trips.create');
-    Route::get('/trips/edit', [\App\Http\Controllers\TripTypeController::class, 'edit'])->name('admin.trips.edit');
+    Route::get('/trips/edit/{id}', [\App\Http\Controllers\TripTypeController::class, 'edit']);
     Route::get('/trips/destroy', [\App\Http\Controllers\TripTypeController::class, 'destroy'])->name('admin.trips.destroy');
-    Route::get('/trips/update', [\App\Http\Controllers\TripTypeController::class, 'update'])->name('admin.trips.update');
+    Route::put('/trips/update/{id}', [\App\Http\Controllers\TripTypeController::class, 'update'])->name('admin.trips.update');
+
+    Route::resource('albums', \App\Http\Controllers\AlbumController::class);
+    Route::resource('photos', \App\Http\Controllers\PhotoController::class);
+
 })->middleware('auth');
 
 

@@ -296,7 +296,16 @@
 
         font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     }
-
+    h1{
+        color: #1b3c3d;
+        text-align: center;
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+    p{
+        color: #1b3c3d;
+        font-size: 18px;
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
 
     /** CARDS END **/
     </style>
@@ -320,9 +329,14 @@
 
 <div class="swiper">
     <div class="swiper-wrapper">
-        <div class="swiper-slide">Slide 1</div>
-        <div class="swiper-slide">Slide 2</div>
-        <div class="swiper-slide">Slide 3</div>
+        <div class="swiper-slide" style="padding:0; margin:0; width: 100%"><img style="object-fit: cover; width: 100%" src="{{ asset('images/nautilos-1.jpg') }}"></div>
+        <h2 style="z-index: 10000; position: absolute; bottom: 50px; left: 100px; color: white; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif">Test text 1</h2>
+        <div class="swiper-slide"><img  style="object-fit: cover; width: 100%" src="{{ asset('images/nautilos-2.jpg') }}">
+            <h2 style="z-index: 10000; position: absolute; bottom: 50px; left: 100px; color: white; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif">Test text 2</h2>
+        </div>
+        <div class="swiper-slide"><img style="object-fit: cover; width: 100%" src="{{ asset('images/nautilos-3.jpg') }}">
+            <h2 style="z-index: 10000; position: absolute; bottom: 50px; left: 100px; color: white; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif">Test text 3</h2>
+        </div>
     </div>
     <!-- Add pagination, navigation, etc. if needed -->
     <div class="swiper-pagination"></div>
@@ -386,6 +400,7 @@
          @endif
 </div>
  </div>
+@if($page->is_home)
 <div class="naut_big_divider">
     <button>Discover More</button>
 </div>
@@ -397,12 +412,12 @@
 <p style="text-align: justify; font-size: 18px;">So, whether you’d like to join one of our&nbsp;<strong>classic&nbsp;cruises,&nbsp;semi-private cruises&nbsp;</strong>or hire our yacht for your own <strong>private cruise</strong>, we guarantee you an unforgettable experience.<br>
     &nbsp;</p>
 </div>
-
+@endif
 
 @if($page->is_home || $page->id == '125')
 <livewire:frontend.components.rooms-showcase />
 @endif
-
+@if($page->is_home)
 <div class="card-wrapper">
     <div class="card">
         <img class="card-image" src="{{ asset('images/card_1.jpg') }}">
@@ -492,6 +507,7 @@ Private cruises include a skipper and a host who will do all the work for you, s
     </div>
 
 </div>
+@endif
 
 
 
@@ -512,66 +528,16 @@ Private cruises include a skipper and a host who will do all the work for you, s
 </script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script>
-
-    const cin = document.querySelector('#check_in_date');
-    const cout = document.querySelector('#check_out_date');
-    console.log('miniform' + cin);
-    const checkInPicker = flatpickr("#trip_date", {
-        // ... other check-in options here ...
-        disableMobile: true,
-        dateFormat: "d-m-Y",
-        position: "auto center",
-        // appendTo: cin,
-        placeholder: "Check-in date",
-        onReady: function(){
-            this.set('minDate', "today");
-            console.log(this.config.maxDate);
-        },
-        onChange: function(selectedDates) {
-            const checkInDate = selectedDates[0];
-            if(selectedDates.length !== 0){
-                checkOutPicker.set('minDate', checkInDate.fp_incr(1));
-            }else{
-                checkOutPicker.set('minDate', undefined);
-            }
-            // Minimum check-out date is one day after check-in
-        },
-        onClose: function(selectedDates){
-            if(selectedDates.length === 0){
-                checkOutPicker.clear();
-                checkOutPicker.set('minDate', null);
-            }
-        }
-    });
-
-    const checkOutPicker = flatpickr("#check_out_date", {
-        // ... other check-out options here ...
-        disableMobile: true,
-        dateFormat: "d-m-Y",
-        position: "below",
-        // appendTo: miniFormContainer,
-        placeholder: "Check-out date",
-        onReady: function(){
-            this.set('minDate', "today");
-        },
-        onChange: function(selectedDates) {
-            const checkOutDate = selectedDates[0];
-            if(selectedDates.length !== 0) {
-                checkInPicker.set('maxDate', checkOutDate.fp_incr(-1)); // Maximum check-in date is one day before check-out
-            }else{
-                checkOutPicker.set('maxDate', undefined);
-            }
-        },
-        onClose: function(selectedDates){
-            if(selectedDates.length === 0){
-                checkInPicker.clear();
-                this.clear();
-                checkInPicker.set('maxDate', null);
-            }
-        }
-
+    document.addEventListener("DOMContentLoaded", function() {
+        flatpickr("#trip_date", {
+            dateFormat: "d-m-Y",  // Set the desired format
+            minDate: "today",  // Prevent selecting past dates
+            defaultDate: "today", // Optional: Pre-fill with today's date
+            allowInput: true // Allows manual input while enforcing format
+        });
     });
 </script>
+
 <script>
 
 

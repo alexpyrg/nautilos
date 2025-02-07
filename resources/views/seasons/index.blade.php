@@ -3,34 +3,34 @@
 <div>
     <!-- Season Creation Section -->
     <div class="max-w-2xl mx-auto bg-white p-6 rounded-lg shadow-md">
-        <h2 class="text-2xl font-semibold mb-4">Season Creation</h2>
+        <h2 class="text-2xl font-semibold mb-4">Δημιουργία Σεζον</h2>
         <form id="seasonForm" class="space-y-4" method="post" action="/admin/seasons">
             @csrf
             <div>
-                <label class="block text-gray-700 font-medium">Season Name</label>
+                <label class="block text-gray-700 font-medium">Όνομα Σεζον</label>
                 <input type="text" id="seasonName" name="name"required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring focus:ring-blue-300">
             </div>
             <div>
-                <label class="block text-gray-700 font-medium">Start Date</label>
+                <label class="block text-gray-700 font-medium">Αρχη Σεζον</label>
                 <input type="text" id="startDate" name="start_date" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring focus:ring-blue-300">
             </div>
             <div>
-                <label class="block text-gray-700 font-medium">End Date</label>
+                <label class="block text-gray-700 font-medium">Τέλος Σεζον</label>
                 <input type="text" id="endDate" name="end_date" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring focus:ring-blue-300">
             </div>
             <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700">Create</button>
         </form>
     </div>
-
+    <br>
     <!-- All Seasons Table -->
     <div class="max-w-3xl mx-auto mt-8 bg-white p-6 rounded-lg shadow-md">
-        <h2 class="text-2xl font-semibold mb-4">All Seasons</h2>
+        <h2 class="text-2xl font-semibold mb-4">Όλες οι Σεζον</h2>
         <table class="w-full border-collapse border border-gray-300">
             <thead class="bg-gray-200">
             <tr>
-                <th class="border border-gray-300 px-4 py-2">Name</th>
-                <th class="border border-gray-300 px-4 py-2">Start Date</th>
-                <th class="border border-gray-300 px-4 py-2">End Date</th>
+                <th class="border border-gray-300 px-4 py-2">Όνομα Σεζον</th>
+                <th class="border border-gray-300 px-4 py-2">Αρχη Σεζον</th>
+                <th class="border border-gray-300 px-4 py-2">Τέλος Σεζον</th>
             </tr>
             </thead>
             <tbody id="seasonTable">

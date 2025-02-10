@@ -111,7 +111,7 @@ Route::get('/admin/mailing/template/{id}', function (){
 
 //DEBUG-ROUTE
 //Route::get('/reservation/new', \App\Livewire\ReservationFormNew::class)->name('reservation.new');
-Route::get('/reservation', \App\Livewire\TripReservationForm::class )->name('reservation.new')->middleware('auth');
+Route::get('/reservation', \App\Livewire\TripReservationForm::class )->name('reservation.new');
 Route::get('/admin/clear-and-recache', function(){
     $clearcache = \Illuminate\Support\Facades\Artisan::call('cache:clear');
     echo("Cache cleared<br>");

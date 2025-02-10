@@ -88,11 +88,19 @@ class TripReservationForm extends Component
             $this->validate();
             // For example, load the policy from a Page record.
             // You might store the policy page id in a config value or property.
-            $policyPageId = 1; // adjust this id as needed
-            $policyPage = Page::find($policyPageId);
-            $this->policyContent = $policyPage ? $policyPage->content : 'Policy content not available.';
             $this->currentStep = 2;
-        } elseif ($this->currentStep === 2) {
+        }elseif ($this->currentStep === 2){
+
+
+                $this->validate();
+                // For example, load the policy from a Page record.
+                // You might store the policy page id in a config value or property.
+                $policyPageId = 1; // adjust this id as needed
+                $policyPage = Page::find($policyPageId);
+                $this->policyContent = $policyPage ? $policyPage->content : 'Policy content not available.';
+                $this->currentStep = 2;
+
+        } elseif ($this->currentStep === 3) {
             // Final submission step
             $this->submit();
         }

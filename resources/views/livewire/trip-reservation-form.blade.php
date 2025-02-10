@@ -6,7 +6,6 @@
                 {{ $reservation_form->line_1 ?? 'Please complete your booking form online' }}<br>
                 {{ $reservation_form->line_2 ?? 'Cruise Day' }} {{ $trip_date ?? 'N/A' }}
             </h1>
-            @if ($errors->any())
                 @if ($errors->any())
                     <script>
                         window.onload = function() {
@@ -15,8 +14,7 @@
                         };
                     </script>
                 @endif
-                <h1> {{ dd($errors->all()) }} </h1>
-            @endif
+
 
             <table class="main-info-select">
                 <tbody>
@@ -85,6 +83,11 @@
                         <input wire:model="country" type="text" id="country">
                     </div>
                 </div>
+            </div>
+
+            <div style="margin: 0 auto; width: 100%; display: block; position: relative; padding: 0 margin:0;">
+                <label for="special_request"> {{ $reservation_form->special_request ?? 'Special Request' }} </label>
+                <textarea name="special_request" style="margin: 0 auto; display: block; position: relative; max-width: 100%; min-width: 600px; border: 2px solid #1b3c3d; min-height: 150px;" wire:model="special_request" ></textarea>
             </div>
             {{-- STEP 1 Buttons --}}
             <div class="buttons-wrapper">
